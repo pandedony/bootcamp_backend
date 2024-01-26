@@ -2,12 +2,17 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --force",
         "build": "vite build"
     },
     "devDependencies": {
+        "@alpinejs/intersect": "^3.13.5",
+        "autoprefixer": "^10.4.17",
         "axios": "^1.6.4",
+        "flowbite": "^2.2.1",
         "laravel-vite-plugin": "^1.0.0",
+        "postcss": "^8.4.33",
+        "tailwindcss": "^3.4.1",
         "vite": "^5.0.0"
     }
 }
