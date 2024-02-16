@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $productTotal = Product::count();
+        return view('admin.dashboard', compact('productTotal'));
     }
 }
