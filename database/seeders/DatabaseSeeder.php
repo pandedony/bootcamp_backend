@@ -15,15 +15,5 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        if (!User::exists()) {
-            $this->call([
-                UserSeeder::class,
-            ]);
-        }
-        if (!Category::exists()) {
-            $this->call([
-                CategorySeeder::class,
-            ]);
-        }
     }
 }
