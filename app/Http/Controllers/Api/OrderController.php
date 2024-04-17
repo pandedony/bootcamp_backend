@@ -29,6 +29,7 @@ class OrderController extends Controller
                 'orderItems' => 'required|array',
                 'orderItems.*.productId' => 'required|exists:products,id',
                 'orderItems.*.quantity' => 'required|integer|min:1',
+                'orderItems.*.color' => 'nullable',
             ]);
 
             // Create a new order
@@ -44,6 +45,7 @@ class OrderController extends Controller
             foreach ($validatedData['orderItems'] as $itemData) {
                 $productId = $itemData['productId'];
                 $requestedQuantity = $itemData['quantity'];
+                $color = $itemData['color'];
 
                 // Retrieve the product
                 $product = Product::findOrFail($productId);
@@ -62,6 +64,7 @@ class OrderController extends Controller
                 $orderItem->productId = $productId;
                 $orderItem->orderId = $order->id;
                 $orderItem->quantity = $requestedQuantity;
+                $orderItem->color = $color;
                 $orderItem->save();
 
                 // Update product quantity

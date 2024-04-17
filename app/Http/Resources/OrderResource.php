@@ -25,6 +25,7 @@ class OrderResource extends JsonResource
                 return [
                     'product' => $item->product,
                     'quantity' => $item->quantity,
+                    'color' => $item->color,
                 ];
             }),
         ];
