@@ -7,6 +7,13 @@
             <div class="bg-white border rounded-lg shadow-xl">
                 <div class="text-xl bg-gray-200 p-4">{{ __('Login') }}</div>
 
+                @if(session('error'))
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        <strong class="font-bold">Error:</strong>
+                        <span class="block sm:inline">{{ session('error') }}</span>
+                    </div>
+                @endif
+
                 <div class="p-6">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

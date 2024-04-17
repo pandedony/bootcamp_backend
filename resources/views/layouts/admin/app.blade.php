@@ -26,7 +26,6 @@
 
     <section class="navbar">
       @include('layouts.admin.topbar')
-
     </section>
 
     <section class="sidebar">
